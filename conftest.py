@@ -46,8 +46,8 @@ def login_user(setup: WebDriver):
 
     login.login_click()
     logger.info("clicked login button")
-    login.username("pp2804449@gmail.com")
-    login.password_add("hello_PIYU_0911")
+    login.username("name@gmail.com")
+    login.password_add("*****")
     login.done()
 
     
