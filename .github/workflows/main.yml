@@ -3,8 +3,6 @@ name: Selenium PyTest Automation
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   test:
@@ -12,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
     - name: Checkout repository
       uses: actions/checkout@v4
 
@@ -24,13 +21,8 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install selenium
-        pip install pytest
-        pip install webdriver-manager
-
-    - name: Install Chrome
-      uses: browser-actions/setup-chrome@v1
+        pip install selenium pytest webdriver-manager
 
     - name: Run tests
       run: |
-        pytest
+        pytest test/
